@@ -1,8 +1,8 @@
-import "./Users.css";
+import "./Employees.css";
 
-export const Users = ({ user }) => {
+export const Employees = ({ user }) => {
   return (
-    <div key={user.id} className="user customers">
+    <div key={user.id} className="user employees">
       <div>
         <div className="user-info">Name</div>
         <div>{user.fullName}</div>

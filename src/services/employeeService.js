@@ -3,3 +3,9 @@ export const getAllEmployees = async () => {
     res.json()
   );
 };
+
+export const getStaffUsers = async () => {
+  const response = await fetch("http://localhost:8088/users/?isStaff=true");
+  const data = await response.json();
+  return data;
+};

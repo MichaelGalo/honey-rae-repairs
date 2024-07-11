@@ -9,3 +9,9 @@ export const getStaffUsers = async () => {
   const data = await response.json();
   return data;
 };
+
+export const getEmployeeByUserId = async (userId) => {
+  return fetch(
+    `http://localhost:8088/employees?userId=${userId}&_expand=user`
+  ).then((res) => res.json());
+};

@@ -3,25 +3,19 @@ export const FilterBar = ({ setShowEmergencyOnly, setSearchTerm }) => {
     <div className="filter-bar">
       <button
         className="filter-btn btn-primary"
-        onClick={() => {
-          setShowEmergencyOnly(true);
-        }}
+        onClick={() => setShowEmergencyOnly(true)}
       >
         Emergency
       </button>
 
       <button
         className="filter-btn btn-info"
-        onClick={() => {
-          setShowEmergencyOnly(false);
-        }}
+        onClick={() => setShowEmergencyOnly(false)}
       >
         Show All
       </button>
       <input
-        onChange={(event) => {
-          setSearchTerm(event.target.value);
-        }}
+        onChange={(event) => setSearchTerm(event.target.value)}
         type="text"
         placeholder="search tickets"
         className="ticket-search"

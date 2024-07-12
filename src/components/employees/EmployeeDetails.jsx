@@ -21,21 +21,20 @@ export const EmployeeDetails = () => {
     });
   }, [employeeId]);
 
-  //TODO: Actually grab the information below they are asking for!
+  //TODO: Actually grab the information below they are asking for! Rate instead of name
 
   return (
     <section className="employee">
       <header className="employee-header">
         <div>
-          <span className="employee-info">Name :</span>
-          {employee.user?.name}
+          <span className="employee-info">Rate : </span>${employee.rate}
         </div>
         <div>
-          <span className="employee-info">Email :</span>
+          <span className="employee-info">Email : </span>
           {employee.user?.email}
         </div>
         <div>
-          <span className="employee-info">Specialty :</span>
+          <span className="employee-info">Specialty : </span>
           {employee.specialty}
         </div>
       </header>

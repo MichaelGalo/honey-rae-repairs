@@ -7,8 +7,10 @@ import { CustomerDetails } from "../components/customers/CustomerDetails";
 import { EmployeesList } from "../components/employees/EmployeesList";
 import { EmployeeDetails } from "../components/employees/EmployeeDetails";
 import { useEffect, useState } from "react";
+import { EmployeeForm } from "../components/forms/EmployeeForm";
 
 export const ApplicationViews = () => {
+  // this manages the current user
   const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
@@ -40,6 +42,10 @@ export const ApplicationViews = () => {
           <Route index element={<EmployeesList />} />
           <Route path=":employeeId" element={<EmployeeDetails />} />
         </Route>
+        <Route
+          path="profile"
+          element={<EmployeeForm currentUser={currentUser} />}
+        />
       </Route>
     </Routes>
   );

@@ -7,8 +7,6 @@ import {
 } from "../../services/employeeService";
 import "./Employees.css";
 
-//TODO: This was copy-pasta and rename from customer details. Debug later
-
 export const EmployeeDetails = () => {
   const [employee, setEmployee] = useState({});
 
@@ -20,8 +18,6 @@ export const EmployeeDetails = () => {
       setEmployee(employee);
     });
   }, [employeeId]);
-
-  //TODO: Actually grab the information below they are asking for! Rate instead of name
 
   return (
     <section className="employee">

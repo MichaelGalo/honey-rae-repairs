@@ -27,3 +27,21 @@ export const updateTicket = async (ticket) => {
     body: JSON.stringify(ticket),
   });
 };
+
+// POST request to create a new customer ticket
+export const createCustomerTicket = async (ticket) => {
+  return fetch("http://localhost:8088/serviceTickets", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(ticket),
+  }).then((response) => response.json());
+};
+
+// Delete request to delete a ticket
+export const deleteTicket = async (ticketId) => {
+  return fetch(`http://localhost:8088/serviceTickets/${ticketId}`, {
+    method: "DELETE",
+  });
+};

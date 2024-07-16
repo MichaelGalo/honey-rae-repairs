@@ -12,13 +12,20 @@ export const TicketList = ({ currentUser }) => {
 
   const getAndSetTickets = () => {
     getAllTickets().then((ticketsArray) => {
-      setAllTickets(ticketsArray);
+      if (currentUser.isStaff) {
+        setAllTickets(ticketsArray);
+      } else {
+        const customerTickets = ticketsArray.filter(
+          (ticket) => ticket.userId === currentUser.id
+        );
+        setAllTickets(customerTickets);
+      }
     });
   };
 
   useEffect(() => {
     getAndSetTickets();
-  }, []); // ONLY runs on initial render of component
+  }, [currentUser]);
 
   useEffect(() => {
     // filter tickets

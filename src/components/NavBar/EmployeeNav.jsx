@@ -34,7 +34,7 @@ import { Link, useNavigate } from "react-router-dom";
 //   );
 // };
 
-export const NavBar = () => {
+export const EmployeeNav = () => {
   const navigate = useNavigate();
 
   return (
